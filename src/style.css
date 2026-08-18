@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #080808;
+  color: #f2f2f2;
+  font-family: 'Space Mono', monospace;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 28px 42px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #252525;
+  padding-bottom: 22px;
+}
+
+.logo {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: #b7ff3c;
+}
+
+.status {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: #b7ff3c;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #b7ff3c;
+}
+
+.hero {
+  max-width: 900px;
+  padding: 90px 0 55px;
+}
+
+.eyebrow {
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  font-size: clamp(60px, 9vw, 130px);
+  line-height: 0.84;
+  letter-spacing: -7px;
+  font-weight: 800;
+}
+
+h1 span {
+  color: transparent;
+  -webkit-text-stroke: 1px #f2f2f2;
+}
+
+.description {
+  color: #888;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 35px;
+}
+
+button {
+  margin-top: 30px;
+  padding: 15px 20px;
+  background: #b7ff3c;
+  border: none;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+.arrow {
+  font-size: 18px;
+}
+
+.preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  max-width: 1000px;
+}
+
+.preview-card {
+  border: 1px solid #292929;
+  background: #0d0d0d;
+  min-height: 340px;
+}
+
+.card-header {
+  height: 38px;
+  border-bottom: 1px solid #292929;
+  padding: 0 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.camera-placeholder,
+.avatar-placeholder {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  position: relative;
+}
+
+.camera-placeholder p,
+.avatar-placeholder p {
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+.camera-placeholder small {
+  font-size: 8px;
+  color: #333;
+  margin-top: 8px;
+}
+
+.crosshair {
+  width: 90px;
+  height: 90px;
+  border: 1px solid #333;
+  position: relative;
+}
+
+.crosshair::before,
+.crosshair::after {
+  content: '';
+  position: absolute;
+  background: #333;
+}
+
+.crosshair::before {
+  width: 1px;
+  height: 120%;
+  left: 50%;
+  top: -10%;
+}
+
+.crosshair::after {
+  height: 1px;
+  width: 120%;
+  top: 50%;
+  left: -10%;
+}
+
+.face {
+  width: 125px;
+  height: 145px;
+  border: 2px solid #666;
+  border-radius: 45% 45% 48% 48%;
+  position: relative;
+}
+
+.eye {
+  width: 13px;
+  height: 13px;
+  border: 2px solid #888;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+}
+
+.left-eye {
+  left: 30px;
+}
+
+.right-eye {
+  right: 30px;
+}
+
+.mouth {
+  width: 35px;
+  height: 15px;
+  border-bottom: 2px solid #888;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 35px;
+  left: 43px;
+}
+
+footer {
+  margin-top: auto;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  color: #333;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+  .app {
+    padding: 20px;
+  }
+
+  .hero {
+    padding: 60px 0 40px;
+  }
+
+  h1 {
+    letter-spacing: -4px;
+  }
+
+  .preview {
+    grid-template-columns: 1fr;
+  }
+}
+.camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.camera-placeholder {
+  overflow: hidden;
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tracking-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: scaleX(-1);
+}
+
+.camera-video {
+  transform: scaleX(-1);
+}
